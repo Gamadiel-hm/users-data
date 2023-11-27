@@ -16,7 +16,6 @@ import {
   objectTitlesInit,
   titleTableInit,
 } from 'src/app/core/enums/titleTable';
-import * as data from '../../../data/userDta.json';
 import { countPage, initEnumCount } from 'src/app/core/models/apiButton';
 
 @Component({
@@ -31,8 +30,8 @@ export class TableUsersComponent implements OnInit, OnChanges {
   titleTable: TitleTable[] = titleTableInit;
   changeSortFilter: ObjectFilter = enumSearchInit;
   enumCountPage: countPage[] = initEnumCount;
-  countPage: number = 1;
-  @Input() filterString: string = '';
+  countPage = 1;
+  @Input() filterString = '';
   @Input() optionSearch: TitleTable = TitleTable.default;
 
   constructor(private dataApiService: DataApiService) {}
@@ -44,6 +43,7 @@ export class TableUsersComponent implements OnInit, OnChanges {
     });
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ngOnChanges(changes: SimpleChanges): void {
     this.changeSortFilter = {
       enumFilter: EnumSearcht.filter,

@@ -6,9 +6,9 @@ import { UsersData } from 'src/app/core/models/userData';
   providedIn: 'root',
 })
 export class DataApiService {
-  apiUrl: string = 'https://randomuser.me/api/?page=';
-  results: string = '&results=10';
-  seed: string = '&seed=abc';
+  apiUrl = 'https://randomuser.me/api/?page=';
+  results = '&results=10';
+  seed = '&seed=abc';
 
   constructor(private http: HttpClient) {}
 

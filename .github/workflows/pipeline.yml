@@ -16,4 +16,6 @@ jobs:
           node-version: 18.17.1
           cache: "npm"
       - name: install dependencies
-        run: npm install
+        run: npm install --no-audit --no-fund --no-optional
+      - name: eslint run
+        run: ng lint
