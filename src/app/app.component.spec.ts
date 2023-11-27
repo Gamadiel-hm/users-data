@@ -1,13 +1,19 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent]
-  }));
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [AppComponent],
+    });
+    fixture = TestBed.createComponent(AppComponent);
+  });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
@@ -15,13 +21,18 @@ describe('AppComponent', () => {
   it(`should have as title 'usersData'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('usersData');
+    expect(app.title).toEqual('App SearchMovies');
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('usersData app is running!');
+    const title = fixture.debugElement.query(By.css('h1.titleApp'));
+    expect(title.context.title).toContain('App SearchMovies');
+  });
+
+  it('sholud have value form equal input', () => {
+    const inputSeach = fixture.nativeElement as HTMLElement;
+    expect(inputSeach.querySelector('input')?.placeholder).toEqual(
+      'Write title movie'
+    );
   });
 });

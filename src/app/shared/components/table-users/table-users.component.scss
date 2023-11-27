@@ -1,0 +1,48 @@
+.table {
+  width: 100%;
+
+  & thead {
+    text-align: left;
+    height: 2rem;
+
+    & th:hover {
+      background-color: #2b2c2a;
+      cursor: pointer;
+    }
+    & th:hover:last-child {
+      background: none;
+      cursor: default;
+    }
+  }
+
+  & tbody {
+    transition: all 0.4s;
+    margin-bottom: 2rem;
+    &:hover:nth-child(even) {
+      background-color: #1c1d1b;
+      transition: all 0.4s;
+    }
+    &:hover:nth-child(odd) {
+      background-color: #557285;
+      transition: all 0.4s;
+    }
+  }
+
+  & tbody td {
+    border-bottom: 1px solid #9c9999;
+  }
+
+  & tfoot {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    & button:nth-child(odd):hover {
+      background-color: #49677a;
+    }
+
+    & button:nth-child(even):hover {
+      background-color: #1c1d1b;
+    }
+  }
+}
