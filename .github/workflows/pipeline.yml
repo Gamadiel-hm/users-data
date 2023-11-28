@@ -13,12 +13,8 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 18.17.1
-          cache: "npm"
-      - name: install dependencies
-        run: npm install --no-audit --no-fund --omit=optional
-      - name: eslint run
-        run: ls -l
-      - run: ls -a
-      - run: cd /
-      - run: ls -a
+          node-version: "18"
+      - name: Install dependencies
+        run: npm i --no-audit --no-fund --no-optional
+      - name: build poroject
+        run: npm run build:prod

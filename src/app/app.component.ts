@@ -8,7 +8,7 @@ import { TitleTable, titleTableInit } from './core/enums/titleTable';
 })
 export class AppComponent {
   titleApp = 'App UserList';
-  searchTitle: string = '';
+  searchTitle = '';
   optionSearch: TitleTable = TitleTable.name;
   enumsTable: TitleTable[] = titleTableInit;
 
@@ -17,8 +17,6 @@ export class AppComponent {
     country: TitleTable.country,
     gender: TitleTable.gender,
   };
-
-  constructor() {}
 
   searchChangeKey(title: string) {
     this.searchTitle = title;
